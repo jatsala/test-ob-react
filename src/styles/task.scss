@@ -1,0 +1,28 @@
+.task-action {
+    cursor: pointer;
+}
+
+.task-completed {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.task-pending {
+    font-weight: bold;
+    color: tomato;
+}
+
+// .levels-normal-style {
+//     color:blue;
+//     font-weight: bold
+// }
+
+// .levels-urgent-style {
+//     color:yellow;
+//     font-weight: bold
+// }
+
+// .levels-blocking-style {
+//     color:tomato;
+//     font-weight: bold
+// }
