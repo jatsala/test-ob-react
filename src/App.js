@@ -18,9 +18,13 @@ import AxiosCRUDExample from './components/pure/AxiosCRUDExample';
 // import GreetingF from './components/pure/greetingF';
 // import TaskListComponent from './components/container/task_list'
 
+import Updater from './components/sw/Updater';
+
 function App() {
+  const version = 'app-v2-Front';
   return (
     <div className="App">
+      <h1>Version {version}</h1>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         Componente Propio Gretting.jsx */}
@@ -57,6 +61,7 @@ function App() {
 
       {/* Proyecto Final */}
       {/* <TaskListComponent></TaskListComponent> */}
+      <Updater></Updater>
     </div>
   );
 }

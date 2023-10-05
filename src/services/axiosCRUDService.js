@@ -1,60 +1,62 @@
-import axios from "axios";
+import axios from 'axios';
 
 /**
- * Login Method to ReqRes endPoint
- * @param {string} email
- * @param {string} password
+ * Login Method to ReqRes endpoint
+ * @param { string } email 
+ * @param { string} password 
  */
 export const login = (email, password) => {
 
     let body = {
-        email,
-        password
+        email: email,
+        password: password
     }
 
-    // Returns the response with a Promise    
-    return axios.post('https://reqres.in/api/login', body
-    )
+    // Returns the response with a Promise
+    return axios.post('https://reqres.in/api/login', body)
+
 }
 
-// Obtain ALL Users
+
+// Obtain All Users
 export const getAllUsers = () => {
-    return axios.get('https://reqres.in/api/users')
+    return axios.get('https://reqres.in/api/users');
 }
 
-// Obtain ALL Pageg Users
+// Obtain All paged users
 export const getAllPagedUsers = (page) => {
-    return axios.get(`https://reqres.in/api/users?page=${page}`)
+    return axios.get(`https://reqres.in/api/users?page=${page}`);
 }
+
+
 // Obtain User by ID
 export const getUserByID = (id) => {
-    return axios.get(`https://reqres.in/api/users/${id}`)
+    return axios.get(`https://reqres.in/api/users/${id}`);
 }
 
 // Create User
 export const createUser = (name, job) => {
     let body = {
-        name,
-        job
+        name: name,
+        job: job
     }
 
-    // Returns the response with a Promise    
-    return axios.post('https://reqres.in/api/users', body
-    )
+    // Returns the response with a Promise
+    return axios.post('https://reqres.in/api/users', body)
 }
 
 // Update User
-export const updateUser = (id, name, job) => {
+export const updateUserByID = (id, name, job) => {
     let body = {
-        name,
-        job
+        name: name,
+        job: job
     }
 
-    // Returns the response with a Promise    
-    return axios.put(`https://reqres.in/api/users/${id}`, body
-    )
+    // Returns the response with a Promise
+    return axios.put(`https://reqres.in/api/users/${id}`, body)
 }
+
 // Delete User
-export const getDeleteByID = (id) => {
-    return axios.delete(`https://reqres.in/api/users/${id}`)
-}
+export const deleteUserByID = (id) => {
+    return axios.delete(`https://reqres.in/api/users/${id}`);
+} 
