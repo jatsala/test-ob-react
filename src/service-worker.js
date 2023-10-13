@@ -71,14 +71,22 @@ self.addEventListener('message', (event) => {
 
 // Any other custom service worker logic can go here.
 // Aca vamos a colocar todo nuestro código custom
-const version = "app-v2-Front";
+// const version = "app-v2-Front";
 
 self.addEventListener('install', (event) => {
-  console.log(`Installed version ${version}`)
+  console.log(`Nueva versión instalada`)
+
 })
 
 self.addEventListener('activate', (event) => {
-  console.log(`Activated version ${version}!`)
+  console.log(`Nueva versión activada`)
+})
+
+self.addEventListener('push', (event) => {
+  const { title, message } = event.data.json();
+  console.log(title);
+  console.log(message);
+  self.registration.showNotification(title, { body: message });
 })
 
 

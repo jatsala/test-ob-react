@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
-import AxiosCRUDExample from './components/pure/AxiosCRUDExample';
+// import AxiosCRUDExample from './components/pure/AxiosCRUDExample';
+import NotificationManager from './components/pure/NotificationManager';
 // import AxiosExample from './components/pure/AxiosExample';
 // import FetchExample from './components/pure/FetchExample';
 // import ObservableExample from './components/pure/ObservableExample';
@@ -21,10 +22,10 @@ import AxiosCRUDExample from './components/pure/AxiosCRUDExample';
 import Updater from './components/sw/Updater';
 
 function App() {
-  const version = 'app-v2-Front';
+  // const version = 'app-v3-Front';
   return (
     <div className="App">
-      <h1>Version {version}</h1>
+      {/* <h1>Version {version}</h1> */}
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         Componente Propio Gretting.jsx */}
@@ -57,7 +58,8 @@ function App() {
       {/* <ObservableExample /> */}
       {/* <FetchExample /> */}
       {/* <AxiosExample /> */}
-      <AxiosCRUDExample />
+      {/* <AxiosCRUDExample /> */}
+      <NotificationManager />
 
       {/* Proyecto Final */}
       {/* <TaskListComponent></TaskListComponent> */}

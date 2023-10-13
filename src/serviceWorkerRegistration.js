@@ -10,6 +10,13 @@
 // To learn more about the benefits of this model and instructions on how to
 // opt-in, read https://cra.link/PWA
 
+import axios from 'axios';
+
+const vapidKeys = {
+  "publicKey": "BD8NMN1O2C0b8HJtB4HTG0TMykxzkkg25yExB1AufHO2ELuSAz5oL9VcRuGCUPIpZW8jKnEV7ZW4ECGkGDZIhh0",
+  "privateKey": "vx1Z2PgJh5Xxa_PgcVPytMA9uBbO575ecDPjU0XtVQM"
+}
+
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
   // [::1] is the IPv6 localhost address.
@@ -56,6 +63,16 @@ function registerValidSW(swUrl, config) {
   navigator.serviceWorker
     .register(swUrl)
     .then((registration) => {
+      registration.pushManager.getSubscription() //-->>push configuration 
+        .then(async sub => {
+          const pushSubscription = await registration.pushManager.subscribe({
+            userVisibleOnly: true,
+            applicationServerKey: vapidKeys.publicKey
+          })
+          try {
+            await axios.post('http://localhost:8000/subscription', { pushSubscription });
+          } catch (e) { console.log(e) }
+        })
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
         if (installingWorker == null) {
