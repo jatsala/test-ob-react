@@ -1,7 +1,8 @@
 // import logo from './logo.svg';
 import './App.css';
+import Todo from './testComponents/Todo';
 // import AxiosCRUDExample from './components/pure/AxiosCRUDExample';
-import NotificationManager from './components/pure/NotificationManager';
+// import NotificationManager from './components/pure/NotificationManager';
 // import AxiosExample from './components/pure/AxiosExample';
 // import FetchExample from './components/pure/FetchExample';
 // import ObservableExample from './components/pure/ObservableExample';
@@ -19,12 +20,18 @@ import NotificationManager from './components/pure/NotificationManager';
 // import GreetingF from './components/pure/greetingF';
 // import TaskListComponent from './components/container/task_list'
 
-import Updater from './components/sw/Updater';
+// import Updater from './components/sw/Updater';
 
 function App() {
+  const todos = [
+    { id: 1, text: 'Hacer la cama', completed: true },
+    { id: 2, text: 'Cocinar', completed: false },
+    { id: 3, text: 'Aprender Ingles', completed: false }
+  ]
   // const version = 'app-v3-Front';
   return (
     <div className="App">
+      <h1>Bienvenid@</h1>
       {/* <h1>Version {version}</h1> */}
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -59,11 +66,12 @@ function App() {
       {/* <FetchExample /> */}
       {/* <AxiosExample /> */}
       {/* <AxiosCRUDExample /> */}
-      <NotificationManager />
+      {/* <NotificationManager /> */}
+      {todos.map(todo => <Todo todo={todo} />)}
 
       {/* Proyecto Final */}
       {/* <TaskListComponent></TaskListComponent> */}
-      <Updater></Updater>
+      {/* <Updater></Updater> */}
     </div>
   );
 }
